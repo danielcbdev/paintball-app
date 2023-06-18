@@ -1,5 +1,5 @@
 class AssetsConstants{
-  static const String logoPng = "assets/images/logo_png.png";
+  static const String logoPng = "assets/images/logo.png";
 
   ///Animations
   static const String loading = 'assets/animations/loading.json';
