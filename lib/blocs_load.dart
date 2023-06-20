@@ -13,6 +13,7 @@ class BlocsLoad extends StatelessWidget {
       providers: [
         BlocProvider<AuthBloc>(create: (context) => AuthBloc()),
         BlocProvider<UserBloc>(create: (context) => UserBloc()),
+        BlocProvider<UserBloc>(create: (context) => UserBloc()),
       ],
       child: child,
     );

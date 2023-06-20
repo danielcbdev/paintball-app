@@ -29,10 +29,10 @@ class AppColors {
     begin: Alignment.topCenter,
     end: Alignment.bottomCenter,
     colors: [
-      Color(0xFF4CBAE5),
-      Color(0xFF47ADD5),
-      Color(0xFF409CC0),
-      Color(0xFF3A8AA9),
+      Color(0xFF526D82),
+      Color(0xFF485F72),
+      Color(0xFF3E5262),
+      Color(0xFF344552),
     ],
     stops: [0.1, 0.4, 0.7, 0.9],
   );

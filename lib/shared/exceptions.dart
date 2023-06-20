@@ -16,3 +16,7 @@ class AuthException extends CustomException {
 class UserException extends CustomException {
   UserException(String message) : super(message);
 }
+
+class FidelityCardException extends CustomException {
+  FidelityCardException(String message) : super(message);
+}
