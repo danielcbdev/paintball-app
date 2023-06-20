@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:picospaintballzone/screens/home/main.dart';
 import 'package:picospaintballzone/screens/login/main.dart';
@@ -15,7 +16,13 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     super.initState();
-    Future.delayed(const Duration(seconds: 4)).then((value) => Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => const LoginScreen())));
+    Future.delayed(const Duration(seconds: 1)).then((value) {
+      if(FirebaseAuth.instance.currentUser == null){
+        Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => const LoginScreen()));
+      } else{
+        Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => const HomeScreen()));
+      }
+    });
   }
 
   @override

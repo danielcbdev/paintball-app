@@ -4,6 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:picospaintballzone/bloc/auth/auth_bloc.dart';
 import 'package:picospaintballzone/bloc/auth/auth_event.dart';
 import 'package:picospaintballzone/bloc/auth/auth_state.dart';
+import 'package:picospaintballzone/screens/home/main.dart';
 import 'package:picospaintballzone/shared/constants/assets_constants.dart';
 import 'package:picospaintballzone/shared/theme/colors.dart';
 import 'package:picospaintballzone/shared/utils/utils.dart';
@@ -162,20 +163,21 @@ class _LoginScreenState extends State<LoginScreen> {
                       ),
                       BlocListener<AuthBloc, AuthState>(
                         listener: (context, state) {
-                          // if (state is DoneLoginState || state is DoneRegisterClientState) {
-                          //   Navigator.pushReplacement(
-                          //     context,
-                          //     MaterialPageRoute(
-                          //       builder: (context) => const ClientAreaScreen(),
-                          //     ),
-                          //   );
-                          // } else if (state is ErrorAuthState) {
-                          //   Utils.showMessageDialog(
-                          //     context: context,
-                          //     txt: state.message,
-                          //     isSuccess: false,
-                          //   );
-                          // } else if(state is DoneSendPasswordRecoveryState){
+                          if (state is DoneLoginState) {
+                            Navigator.pushReplacement(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => const HomeScreen(),
+                              ),
+                            );
+                          } else if (state is ErrorAuthState) {
+                            Utils.showMessageDialog(
+                              context: context,
+                              txt: state.message,
+                              isSuccess: false,
+                            );
+                          }
+                          // else if(state is DoneSendPasswordRecoveryState){
                           //   Utils.showMessageDialog(context: context, txt: 'E-mail de recuperação de senha enviado!', isSuccess: true,);
                           // }
                         },

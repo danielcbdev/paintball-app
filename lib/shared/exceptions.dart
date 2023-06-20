@@ -12,3 +12,7 @@ class CustomException {
 class AuthException extends CustomException {
   AuthException(String message) : super(message);
 }
+
+class UserException extends CustomException {
+  UserException(String message) : super(message);
+}

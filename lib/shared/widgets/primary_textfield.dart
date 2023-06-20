@@ -1,11 +1,11 @@
 import 'package:brasil_fields/brasil_fields.dart';
-import 'package:picospaintballzone/shared/constants/assets_constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:lottie/lottie.dart';
 import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
+import 'package:picospaintballzone/shared/constants/assets_constants.dart';
 
 import '../theme/colors.dart';
 import '../utils/utils.dart';
@@ -57,43 +57,40 @@ class PrimaryTextField extends HookWidget {
       initialValue: initialValue,
       onChanged: onChanged,
       validator: validator ??
-        (type == PrimaryTextfieldType.cpfOrCnpj ? (value) => Utils.validateCPFCNPJ(value!) :
-            type == PrimaryTextfieldType.dateComplete
-          ? (value){
+          (type == PrimaryTextfieldType.dateComplete
+              ? (value){
             if (value!.length < 10) {
-                return null;
-              } else if (!Utils.isValidDate(value)) {
+              return null;
+            } else if (!Utils.isValidDate(value)) {
               return 'Data inválida!';
             }
             return null;
           }
-          : type == PrimaryTextfieldType.email
-            ? (value){
-                if(value == null || value.isEmpty){
-                  return 'Insira o e-mail';
-                }
-                final emailRegex = RegExp(r"^[a-zA-Z0-9.!#$%&\'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$");
-                if(!emailRegex.hasMatch(value)){
-                  return 'E-mail inválido';
-                }
-                return null;
-              }
+              : type == PrimaryTextfieldType.email
+              ? (value){
+            if(value == null || value.isEmpty){
+              return 'Insira o e-mail';
+            }
+            final emailRegex = RegExp(r"^[a-zA-Z0-9.!#$%&\'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$");
+            if(!emailRegex.hasMatch(value)){
+              return 'E-mail inválido';
+            }
+            return null;
+          }
               : isRequired
               ? (value){
-                if (value == null || value.isEmpty) {
-                    return 'Por favor, insira a informação!';
-                  }
-                return null;
-              }
+            if (value == null || value.isEmpty) {
+              return 'Por favor, insira a informação!';
+            }
+            return null;
+          }
               : (value){
-                  return;
-                }
+            return;
+          }
           ),
       textCapitalization: type == PrimaryTextfieldType.name ? TextCapitalization.words : TextCapitalization.none,
       onFieldSubmitted: onFieldSubmitted,
       style: TextStyle(
-        fontSize: 24,
-        height: 2,
         color: !enabled
             ? Colors.black.withOpacity(0.7)
             : Colors.black,
@@ -108,7 +105,6 @@ class PrimaryTextField extends HookWidget {
       decoration: InputDecoration(
         labelText: "$labelText${isRequired ? ' *' : ''}",
         labelStyle: TextStyle(
-          fontSize: 22,
           fontWeight: FontWeight.w500,
           color: Colors.black.withOpacity(0.7),
         ),
@@ -118,7 +114,7 @@ class PrimaryTextField extends HookWidget {
             : FloatingLabelBehavior.auto,
         errorStyle: const TextStyle(
           color: Colors.red,
-          fontSize: 18,
+          fontSize: 12,
         ),
         floatingLabelStyle: const TextStyle(
           fontFamily: 'Nunito',
@@ -198,7 +194,7 @@ class PrimaryTextField extends HookWidget {
             ),
         prefixIcon: hasPrefix ?? false
             ? Padding(
-          padding: const EdgeInsets.all(22.0),
+          padding: const EdgeInsets.all(12.0),
           child: prefix,
         )
             : null,

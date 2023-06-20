@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:picospaintballzone/bloc/auth/auth_bloc.dart';
+import 'package:picospaintballzone/bloc/user/user_bloc.dart';
 
 class BlocsLoad extends StatelessWidget {
   const BlocsLoad({Key? key, required this.child}) : super(key: key);
@@ -11,6 +12,7 @@ class BlocsLoad extends StatelessWidget {
     return MultiBlocProvider(
       providers: [
         BlocProvider<AuthBloc>(create: (context) => AuthBloc()),
+        BlocProvider<UserBloc>(create: (context) => UserBloc()),
       ],
       child: child,
     );

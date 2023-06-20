@@ -12,6 +12,16 @@ class LoadingAuthState extends AuthState {
   List<Object?> get props => [];
 }
 
+class DoneLoginState extends AuthState {
+  @override
+  List<Object?> get props => [];
+}
+
+class DoneLogoutState extends AuthState {
+  @override
+  List<Object?> get props => [];
+}
+
 class ErrorAuthState extends AuthState {
   final String message;
 

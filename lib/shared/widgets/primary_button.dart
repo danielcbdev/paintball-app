@@ -1,6 +1,6 @@
-import 'package:picospaintballzone/shared/constants/assets_constants.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
+import 'package:picospaintballzone/shared/constants/assets_constants.dart';
 
 import '../theme/colors.dart';
 
@@ -30,7 +30,7 @@ class PrimaryButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 60,
+      height: 47,
       width: width,
       child: RawMaterialButton(
         fillColor: isEnabled! ? color : AppColors.primaryGreyMedium,
@@ -54,10 +54,10 @@ class PrimaryButton extends StatelessWidget {
           children: [
             Expanded(
               child: Lottie.asset(
-                  AssetsConstants.loading,
-                  fit: BoxFit.contain,
-                  height: 30,
-                  width: 30,
+                AssetsConstants.loading,
+                fit: BoxFit.contain,
+                height: 30,
+                width: 30,
               ),
             ),
           ],
@@ -68,10 +68,7 @@ class PrimaryButton extends StatelessWidget {
             Expanded(
               child: Text(
                 text!,
-                style: TextStyle(
-                  fontSize: 22,
-                  color: textColor,
-                ),
+                style: TextStyle(color: textColor,),
                 textAlign: TextAlign.center,
               ),
             ),
