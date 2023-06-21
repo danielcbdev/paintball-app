@@ -24,6 +24,7 @@ dependencies:
   cached_network_image: ^3.2.3
   modal_bottom_sheet: ^2.1.2
   flutter_localization: ^0.1.12
+  url_launcher: ^6.1.11
 
   #firebase
   firebase_core: ^2.14.0
