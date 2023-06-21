@@ -18,4 +18,13 @@ class UserRepository{
     }
   }
 
+  Future<void> addPointToUser({required String uidUser, required int newQtdPoints,}) async {
+    try{
+      final usersCollection = FirebaseFirestore.instance.collection('users');
+      await usersCollection.doc(uidUser).update({"qtd_points": newQtdPoints});
+    } catch(e){
+      throw UserException(e.toString());
+    }
+  }
+
 }

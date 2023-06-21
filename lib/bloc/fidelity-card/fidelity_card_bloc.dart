@@ -1,10 +1,7 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:picospaintballzone/bloc/fidelity-card/fidelity_card_event.dart';
 import 'package:picospaintballzone/bloc/fidelity-card/fidelity_card_state.dart';
-import 'package:picospaintballzone/bloc/user/user_event.dart';
-import 'package:picospaintballzone/bloc/user/user_state.dart';
 import 'package:picospaintballzone/infrastructure/fidelity-card/fidelity_card_repository.dart';
-import 'package:picospaintballzone/infrastructure/user/user_repository.dart';
 import 'package:picospaintballzone/shared/exceptions.dart';
 
 class FidelityCardBloc extends Bloc<FidelityCardEvent, FidelityCardState> {

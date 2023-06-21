@@ -20,6 +20,7 @@ class BodyClientWidget extends StatefulWidget {
 }
 
 class _BodyClientWidgetState extends State<BodyClientWidget> {
+
   @override
   Widget build(BuildContext context) {
     return BlocProvider<FidelityCardBloc>(

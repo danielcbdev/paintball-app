@@ -22,6 +22,11 @@ class DoneGetUserState extends UserState {
   DoneGetUserState({required this.user});
 }
 
+class DoneAddPointToUserState extends UserState {
+  @override
+  List<Object?> get props => [];
+}
+
 class ErrorUserState extends UserState {
   final String message;
 

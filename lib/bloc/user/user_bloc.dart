@@ -23,5 +23,16 @@ class UserBloc extends Bloc<UserEvent, UserState> {
         emit(ErrorUserState(message: e.toString()));
       }
     });
+    on<AddPointToUserEvent>((event, emit) async {
+      emit(LoadingUserState());
+      try {
+        await userRepository.addPointToUser(uidUser: event.uidUser, newQtdPoints: event.newQtdPoints,);
+        emit(DoneAddPointToUserState());
+      } on UserException catch (e) {
+        emit(ErrorUserState(message: e.message));
+      } catch (e) {
+        emit(ErrorUserState(message: e.toString()));
+      }
+    });
   }
 }
