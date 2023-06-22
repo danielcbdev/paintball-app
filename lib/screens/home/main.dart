@@ -23,6 +23,8 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
 
+  bool _isUserAdmin = false;
+
   @override
   void initState() {
     super.initState();
@@ -57,7 +59,14 @@ class _HomeScreenState extends State<HomeScreen> {
               Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => const LoginScreen()));
             }
           },
-          child: BlocBuilder<UserBloc, UserState>(
+          child: BlocConsumer<UserBloc, UserState>(
+            listener: (context, userState){
+              if(userState is DoneGetUserState){
+                setState(() {
+                  _isUserAdmin = userState.user.isAdm ?? false;
+                });
+              }
+            },
             builder: (context, userState){
               if(userState is LoadingUserState){
                 return const Center(child: CircularProgressIndicator(color: AppColors.primaryColor,),);
@@ -85,13 +94,22 @@ class _HomeScreenState extends State<HomeScreen> {
         ),
       ),
       persistentFooterButtons: [
-        PrimaryButton(
-          text: 'Entrar em contato pelo WhatsApp',
-          isEnabled: true,
-          color: AppColors.primaryGreen,
-          textColor: Colors.white,
-          press: () => _launchUrl(),
-        ),
+        if(_isUserAdmin)
+          PrimaryButton(
+            text: 'Nova partida (sem sincronização com a núvem)',
+            isEnabled: true,
+            color: AppColors.primaryGreen,
+            textColor: Colors.white,
+            press: () => _launchUrl(),
+          )
+        else
+          PrimaryButton(
+            text: 'Entrar em contato pelo WhatsApp',
+            isEnabled: true,
+            color: AppColors.primaryGreen,
+            textColor: Colors.white,
+            press: () => _launchUrl(),
+          )
       ],
     );
   }
