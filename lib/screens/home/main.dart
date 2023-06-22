@@ -25,10 +25,12 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
 
   bool _isUserAdmin = false;
+  // late final PushNotifications _pushNotifications = PushNotifications.instance;
 
   @override
   void initState() {
     super.initState();
+    // _pushNotifications.context = context;
     BlocProvider.of<UserBloc>(context).add(GetCurrentUserEvent());
   }
 

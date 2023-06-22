@@ -25,12 +25,14 @@ dependencies:
   modal_bottom_sheet: ^3.0.0-pre
   flutter_localization: ^0.1.12
   url_launcher: ^6.1.11
+  flutter_local_notifications: ^14.1.1
 
   #firebase
   firebase_core: ^2.14.0
   firebase_auth: ^4.6.3
   firebase_storage: ^11.2.3
   cloud_firestore: ^4.8.1
+  firebase_messaging: ^14.6.3
 
   #bloc
   equatable: ^2.0.5

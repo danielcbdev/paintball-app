@@ -22,6 +22,11 @@ class DoneLogoutState extends AuthState {
   List<Object?> get props => [];
 }
 
+class DoneRegisterUserState extends AuthState {
+  @override
+  List<Object?> get props => [];
+}
+
 class ErrorAuthState extends AuthState {
   final String message;
 

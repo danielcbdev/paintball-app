@@ -1,4 +1,8 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_messaging/firebase_messaging.dart';
+import 'package:flutter/material.dart';
+import 'package:picospaintballzone/models/user/user.model.dart';
 import 'package:picospaintballzone/shared/exceptions.dart';
 
 class AuthRepository{
@@ -40,51 +44,44 @@ class AuthRepository{
 
   logout() async => await FirebaseAuth.instance.signOut();
 
-  // registerClient({required ClientSend clientSend}) async {
-  //   try {
-  //     final auth = FirebaseAuth.instance;
-  //     final db = FirebaseFirestore.instance;
-  //     String? imageProfileUrl;
-  //
-  //     await auth.createUserWithEmailAndPassword(
-  //       email: clientSend.email,
-  //       password: clientSend.password,
-  //     ).then((firebaseUser) async {
-  //       debugPrint('user credentials registered');
-  //     }).catchError((error){
-  //       throw ClientException(error.toString());
-  //     });
-  //
-  //     await db.collection("clients").add(clientSend.toJson())
-  //         .then((DocumentReference doc) =>
-  //         debugPrint('client registered')
-  //     ).catchError((error){
-  //       throw ClientException(error.toString());
-  //     });
-  //
-  //     if(clientSend.imageProfile != null){
-  //       final storageRef = FirebaseStorage.instance.ref();
-  //       final ref = storageRef.child("profile_images").child(clientSend.email);
-  //
-  //       await ref.putFile(clientSend.imageProfile!).whenComplete(() async {
-  //         debugPrint('file has been sended!');
-  //         imageProfileUrl = await ref.getDownloadURL();
-  //       }).catchError((error){
-  //         debugPrint('error: $error');
-  //         throw PaymentSlipException(error.toString());
-  //       });
-  //     }
-  //
-  //     await auth.currentUser?.updateDisplayName(clientSend.name);
-  //     if(imageProfileUrl != null){
-  //       await auth.currentUser?.updatePhotoURL(imageProfileUrl);
-  //     }
-  //   } on ClientException catch (ex) {
-  //     throw ClientException(ex.message);
-  //   } catch (ex) {
-  //     throw ClientException(ex.toString());
-  //   }
-  // }
+  registerUser({required String name, required String phone, required String cpf, required String email, required String password,}) async {
+    try {
+      final auth = FirebaseAuth.instance;
+      final db = FirebaseFirestore.instance;
+      final messaging = FirebaseMessaging.instance;
+      final token = await messaging.getToken();
+      String? uid;
+
+      await auth.createUserWithEmailAndPassword(
+        email: email,
+        password: password,
+      ).then((firebaseUser) async {
+        debugPrint('user credentials registered');
+        uid = firebaseUser.user?.uid;
+      }).catchError((error){
+        throw AuthException(error.toString());
+      });
+
+      final user = UserModel(
+        uid: uid,
+        name: name,
+        phone: phone,
+        email: email,
+        cpf: cpf,
+        fcmToken: token,
+        isAdm: false,
+        qtdPoints: 0,
+      );
+
+      await db.collection("users").doc(uid).set(user.toJson()).then((value) {
+        debugPrint('user has been registered');
+      });
+    } on AuthException catch (ex) {
+      throw AuthException(ex.message);
+    } catch (ex) {
+      throw AuthException(ex.toString());
+    }
+  }
 
   sendPasswordRecovery({required String email}) async {
     try {

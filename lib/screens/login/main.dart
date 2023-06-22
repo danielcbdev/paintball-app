@@ -5,6 +5,7 @@ import 'package:picospaintballzone/bloc/auth/auth_bloc.dart';
 import 'package:picospaintballzone/bloc/auth/auth_event.dart';
 import 'package:picospaintballzone/bloc/auth/auth_state.dart';
 import 'package:picospaintballzone/screens/home/main.dart';
+import 'package:picospaintballzone/screens/register/main.dart';
 import 'package:picospaintballzone/shared/constants/assets_constants.dart';
 import 'package:picospaintballzone/shared/theme/colors.dart';
 import 'package:picospaintballzone/shared/utils/utils.dart';
@@ -215,7 +216,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         height: 20,
                       ),
                       InkWell(
-                        // onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => const RegisterScreen())),
+                        onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => const RegisterScreen())),
                         child: RichText(
                           text: const TextSpan(
                             text: 'É novo por aqui? ',
