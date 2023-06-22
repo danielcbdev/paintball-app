@@ -113,32 +113,36 @@ class Utils{
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    PrimaryButtonTextIcon(
-                      text: "Não",
-                      icon: Icons.cancel_outlined,
-                      color: AppColors.primaryRed,
-                      textColor: Colors.white,
-                      width: 150,
-                      isEnabled: true,
-                      press: () {
-                        Navigator.pop(context);
-                        confirm = false;
-                      },
+                    Expanded(
+                      child: PrimaryButtonTextIcon(
+                        text: "Não",
+                        icon: Icons.cancel_outlined,
+                        color: AppColors.primaryRed,
+                        textColor: Colors.white,
+                        width: 150,
+                        isEnabled: true,
+                        press: () {
+                          Navigator.pop(context);
+                          confirm = false;
+                        },
+                      ),
                     ),
                     const SizedBox(
                       width: 5,
                     ),
-                    PrimaryButtonTextIcon(
-                      text: "Sim",
-                      width: 150,
-                      icon: Icons.done,
-                      color: AppColors.primaryGreen,
-                      textColor: Colors.white,
-                      isEnabled: true,
-                      press: () {
-                        Navigator.pop(context);
-                        confirm = true;
-                      },
+                    Expanded(
+                      child: PrimaryButtonTextIcon(
+                        text: "Sim",
+                        width: 150,
+                        icon: Icons.done,
+                        color: AppColors.primaryGreen,
+                        textColor: Colors.white,
+                        isEnabled: true,
+                        press: () {
+                          Navigator.pop(context);
+                          confirm = true;
+                        },
+                      ),
                     ),
                   ],
                 )

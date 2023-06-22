@@ -10,6 +10,7 @@ import 'package:picospaintballzone/bloc/user/user_state.dart';
 import 'package:picospaintballzone/screens/home/widgets/body_admin.dart';
 import 'package:picospaintballzone/screens/home/widgets/body_client.dart';
 import 'package:picospaintballzone/screens/login/main.dart';
+import 'package:picospaintballzone/screens/matches/main.dart';
 import 'package:picospaintballzone/shared/theme/colors.dart';
 import 'package:picospaintballzone/shared/widgets/primary_button.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -100,7 +101,7 @@ class _HomeScreenState extends State<HomeScreen> {
             isEnabled: true,
             color: AppColors.primaryGreen,
             textColor: Colors.white,
-            press: () => _launchUrl(),
+            press: () => Navigator.push(context, MaterialPageRoute(builder: (context) => const MatchesScreen())),
           )
         else
           PrimaryButton(

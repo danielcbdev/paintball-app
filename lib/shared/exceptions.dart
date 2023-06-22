@@ -20,3 +20,7 @@ class UserException extends CustomException {
 class FidelityCardException extends CustomException {
   FidelityCardException(String message) : super(message);
 }
+
+class MatchesException extends CustomException {
+  MatchesException(String message) : super(message);
+}
