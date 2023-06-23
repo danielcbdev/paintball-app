@@ -79,9 +79,9 @@ class _LoginScreenState extends State<LoginScreen> {
                   child: Column(
                     children: [
                       Container(
-                        transform: Matrix4.translationValues(0.0, -80.0, 0.0),
+                        transform: Matrix4.translationValues(0.0, -60.0, 0.0),
                         child: CircleAvatar(
-                          radius: 80,
+                          radius: 60,
                           backgroundColor: AppColors.primaryColorDark,
                           child: Padding(
                             padding: const EdgeInsets.all(16.0),
