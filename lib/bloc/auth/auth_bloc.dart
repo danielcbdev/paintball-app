@@ -1,3 +1,4 @@
+import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:picospaintballzone/bloc/auth/auth_event.dart';
 import 'package:picospaintballzone/bloc/auth/auth_state.dart';
@@ -12,6 +13,12 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
       emit(LoadingAuthState());
       try {
         await authRepository.login(email: event.email, password: event.password,);
+        await FirebaseAnalytics.instance.logEvent(
+          name: "login_event",
+          parameters: {
+            "email": event.email,
+          },
+        );
         emit(DoneLoginState());
       } on AuthException catch (e) {
         emit(ErrorAuthState(message: e.message));
@@ -39,6 +46,12 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
           cpf: event.cpf,
           email: event.email,
           password: event.password,
+        );
+        await FirebaseAnalytics.instance.logEvent(
+          name: "register_event",
+          parameters: {
+            "email": event.email,
+          },
         );
         emit(DoneRegisterUserState());
       } on AuthException catch (e) {

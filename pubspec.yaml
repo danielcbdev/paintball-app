@@ -33,6 +33,7 @@ dependencies:
   firebase_storage: ^11.2.3
   cloud_firestore: ^4.8.1
   firebase_messaging: ^14.6.3
+  firebase_analytics: ^10.4.3
 
   #bloc
   equatable: ^2.0.5

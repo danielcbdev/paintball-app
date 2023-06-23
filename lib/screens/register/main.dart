@@ -47,11 +47,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
             listener: (context, state){
               if(state is DoneRegisterUserState){
                 Utils.showMessageDialog(context: context, txt: 'Usuário cadastrado com sucesso!', isSuccess: true,);
-                Navigator.of(context).pushReplacement(
-                  MaterialPageRoute(
-                    builder: (BuildContext context) => const HomeScreen(),
-                  ),
-                );
+                Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (BuildContext context) => const HomeScreen(),), (route) => false);
               }
             },
             builder: (context, state){
@@ -126,6 +122,9 @@ class _RegisterScreenState extends State<RegisterScreen> {
                       color: AppColors.primaryColor,
                       textColor: Colors.white,
                       press: () async {
+                        Utils.showMessageDialog(context: context, txt: 'Usuário cadastrado com sucesso!', isSuccess: true,);
+                        Navigator.pop(context);
+                        Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (BuildContext context) => const HomeScreen(),),);
                         if(!_validateFields()){
                           Utils.showMessageDialog(context: context, txt: 'Por favor, preencha todas as informações!', isSuccess: false,);
                         } else if(_controllerPassword.text != _controllerRePassword.text) {
