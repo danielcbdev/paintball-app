@@ -119,7 +119,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
   Future<void> _launchUrl() async {
     const url = 'https://wa.me/message/BMD2CXV3YEX6C1';
-    if (!await launchUrl(Uri.parse(url))) {
+    if (!await launchUrl(Uri.parse(url), mode: LaunchMode.externalApplication)) {
       throw Exception('Could not launch $url');
     }
   }
