@@ -38,13 +38,42 @@ In this way, the platform aims to simplify and optimize the organization of pain
     <p>Login Screen</p>
 </div>
 
-![Alt text](/screenshots/login.png?raw=true "Login Screen")
-![Alt text](/screenshots/home_admin.png?raw=true "Admin Home Screen")
-![Alt text](/screenshots/home_client.png?raw=true "Client Home Screen")
-![Alt text](/screenshots/new_game1.png?raw=true "New Game 1 Screen")
-![Alt text](/screenshots/new_game2.png?raw=true "New Game 2 Screen")
-![Alt text](/screenshots/register_charge.png?raw=true "Register Charge Screen")
-![Alt text](/screenshots/view_client.png?raw=true "View Client Screen")
+
+<div align="center">
+    <img src="/screenshots/home_admin.png" width="300px"/> 
+    <p>Admin Home Screen</p>
+</div>
+
+
+<div align="center">
+    <img src="/screenshots/client_admin.png" width="300px"/> 
+    <p>Client Home Screen</p>
+</div>
+
+
+<div align="center">
+    <img src="/screenshots/new_game1.png" width="300px"/> 
+    <p>New Game 1 Screen</p>
+</div>
+
+
+<div align="center">
+    <img src="/screenshots/new_game2.png" width="300px"/> 
+    <p>New Game 2 Screen</p>
+</div>
+
+
+<div align="center">
+    <img src="/screenshots/register_charge.png" width="300px"/> 
+    <p>Register Charge Screen</p>
+</div>
+
+
+<div align="center">
+    <img src="/screenshots/view_client.png" width="300px"/> 
+    <p>View Client Screen</p>
+</div>
+
 
 ## Main technologies used  📚
 - Firebase
