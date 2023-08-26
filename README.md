@@ -18,10 +18,11 @@ Paintball flutter app.
 
 ## Overview
 1. **[Description 📝](#description-)**
-2. **[Main technologies used 📝](#technologies-)**
-3. **[Requirements 📝](#requirements-)**
-4. **[Developing 👷](#developing-)**
-5. **[Releasing 🏷️](#releasing-)**
+2. **[Screenshots 📝](#screenshots-)**
+3. **[Technologies 📝](#technologies-)**
+4. **[Requirements 📝](#requirements-)**
+5. **[Developing 👷](#developing-)**
+6. **[Releasing 🏷️](#releasing-)**
 
 ## Description 📚
 This project aims to assist in managing games at a paintball field. The platform features two types of user profiles:
@@ -30,6 +31,15 @@ This project aims to assist in managing games at a paintball field. The platform
 - Administrator: The administrator profile has the ability to view all non-administrator users. Additionally, they can add points to clients' loyalty cards. Beyond these functions, the administrator is responsible for registering detailed information about each match. This provides complete control over costs and the ability to determine individual charges for each client.
 
 In this way, the platform aims to simplify and optimize the organization of paintball games, making the experience more advantageous for both clients and the administration.
+
+## Screenshots  📚
+![Alt text](/screenshots/login.png?raw=true "Login Screen")
+![Alt text](/screenshots/home_admin.png?raw=true "Admin Home Screen")
+![Alt text](/screenshots/home_client.png?raw=true "Client Home Screen")
+![Alt text](/screenshots/new_game1.png?raw=true "New Game 1 Screen")
+![Alt text](/screenshots/new_game2.png?raw=true "New Game 2 Screen")
+![Alt text](/screenshots/register_charge.png?raw=true "Register Charge Screen")
+![Alt text](/screenshots/view_client.png?raw=true "View Client Screen")
 
 ## Main technologies used  📚
 - Firebase
