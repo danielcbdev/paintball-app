@@ -38,42 +38,50 @@ In this way, the platform aims to simplify and optimize the organization of pain
     <p>Login Screen</p>
 </div>
 
+<br>
 
 <div align="center">
     <img src="/screenshots/home_admin.png" width="300px"/> 
     <p>Admin Home Screen</p>
 </div>
 
+<br>
 
 <div align="center">
-    <img src="/screenshots/client_admin.png" width="300px"/> 
+    <img src="/screenshots/home_client.png" width="300px"/> 
     <p>Client Home Screen</p>
 </div>
 
+<br>
 
 <div align="center">
     <img src="/screenshots/new_game1.png" width="300px"/> 
     <p>New Game 1 Screen</p>
 </div>
 
+<br>
 
 <div align="center">
     <img src="/screenshots/new_game2.png" width="300px"/> 
     <p>New Game 2 Screen</p>
 </div>
 
+<br>
 
 <div align="center">
     <img src="/screenshots/register_charge.png" width="300px"/> 
     <p>Register Charge Screen</p>
 </div>
 
+<br>
 
 <div align="center">
     <img src="/screenshots/view_client.png" width="300px"/> 
     <p>View Client Screen</p>
 </div>
 
+<br>
+<br>
 
 ## Main technologies used  📚
 - Firebase
