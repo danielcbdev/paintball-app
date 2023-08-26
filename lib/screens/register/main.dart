@@ -47,11 +47,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
             listener: (context, state){
               if(state is DoneRegisterUserState){
                 Utils.showMessageDialog(context: context, txt: 'Usuário cadastrado com sucesso!', isSuccess: true,);
-                Navigator.of(context).pushReplacement(
-                  MaterialPageRoute(
-                    builder: (BuildContext context) => const HomeScreen(),
-                  ),
-                );
+                Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (BuildContext context) => const HomeScreen(),), (route) => false);
               }
             },
             builder: (context, state){
