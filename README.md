@@ -34,7 +34,8 @@ In this way, the platform aims to simplify and optimize the organization of pain
 
 ## Screenshots  📚
 <div align="center">
-    <img src="/screenshots/login.png" width="400px"/>  
+    <img src="/screenshots/login.png" width="300px"/> 
+    <p>Login Screen</p>
 </div>
 
 ![Alt text](/screenshots/login.png?raw=true "Login Screen")
