@@ -83,7 +83,7 @@ In this way, the platform aims to simplify and optimize the organization of pain
 <br>
 <br>
 
-## Main technologies used  📚
+## Technologies  📚
 - Firebase
 - Bloc
 - Hydrated Bloc
@@ -107,9 +107,9 @@ In this way, the platform aims to simplify and optimize the organization of pain
 
 1. [Clone this repo](https://docs.gitlab.com/ee/gitlab-basics/start-using-git.html) with git.
 2. Install dependencies by running `flutter packages get` or `flutter pub get` within the directory that you cloned (probably `app`).
-2. Run Flutter_Bloc or genetate new routes with `flutter packages pub run build_runner build` or to avoid conflicts and observe changes `flutter pub run build_runner build --delete-conflicting-outputs` or `flutter packages pub run build_runner watch --delete-conflicting-outputs` (Recommended).
-3. Open any mobile device emulator of your choice.
-4. Execute your app with `flutter run` or F5 (debug mode).
+3. Run Flutter_Bloc or genetate new routes with `flutter packages pub run build_runner build` or to avoid conflicts and observe changes `flutter pub run build_runner build --delete-conflicting-outputs` or `flutter packages pub run build_runner watch --delete-conflicting-outputs` (Recommended).
+4. Open any mobile device emulator of your choice.
+5. Execute your app with `flutter run` or F5 (debug mode).
 
 ## Releasing 🏷️
 
