@@ -33,6 +33,10 @@ This project aims to assist in managing games at a paintball field. The platform
 In this way, the platform aims to simplify and optimize the organization of paintball games, making the experience more advantageous for both clients and the administration.
 
 ## Screenshots  📚
+<div align="center">
+    <img src="/screenshots/login.jpg" width="400px"/>  
+</div>
+
 ![Alt text](/screenshots/login.png?raw=true "Login Screen")
 ![Alt text](/screenshots/home_admin.png?raw=true "Admin Home Screen")
 ![Alt text](/screenshots/home_client.png?raw=true "Client Home Screen")
