@@ -6,8 +6,8 @@
 </p>
 
 <div align="center">
-  <h3>SGGP Flutter App</h3>
-  <p>SGGP Flutter APP is a mobile application in development using Flutter.
+  <h3>Paintball Zone Flutter App</h3>
+  <p>Paintball Zone Flutter APP is a mobile application in development using Flutter.
 </div>
 
 <br />
@@ -34,7 +34,7 @@ In this way, the platform aims to simplify and optimize the organization of pain
 
 ## Screenshots  📚
 <div align="center">
-    <img src="/screenshots/login.jpg" width="400px"/>  
+    <img src="/screenshots/login.png" width="400px"/>  
 </div>
 
 ![Alt text](/screenshots/login.png?raw=true "Login Screen")
